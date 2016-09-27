@@ -1,6 +1,6 @@
 // Comment this out for the deployment branch. Enviroment variables
 // are brough in using AWS config settings. 
-// require('dotenv').config();
+require('dotenv').config();
 
 var express = require('express');
 var app = express();
@@ -14,10 +14,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/client/public'));
 
 app.get('/', function(req, res) {
-  res.send('home');
+  res.sendFile('index');
 });
 
 app.use('/document', documentRouter);
