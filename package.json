@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack -d && nodemon server/server.js",
     "dev": "webpack -d --watch",
-    "build": "webpack -p"
+    "build": "webpack -p", 
+    "rmwebpack": "rm client/public/bundle.js && rm client/public/bundle.js.map"
   },
   "repository": {
     "type": "git",
